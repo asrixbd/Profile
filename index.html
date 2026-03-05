@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsrixBD Profile</title>
+    <style>
+        :root {
+            /* Text colors */
+            --text-main: #e0e0e0;
+            --header-purple: #9d4edd;
+            --link-pink: #ff85a2;
+            
+            /* Section/Card background (slightly transparent) */
+            --card-bg: rgba(22, 22, 26, 0.9);
+            --card-border: rgba(45, 45, 53, 0.7);
+        }
+
+        /* ----------------------------------
+           GRADIENT BACKGROUND (Inspired by image)
+           ---------------------------------- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-color: #0a0a0c; /* Fallback */
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(157, 78, 221, 0.4) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(138, 43, 226, 0.3) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 90%, rgba(128, 0, 128, 0.4) 0px, transparent 50%),
+                radial-gradient(at 20% 80%, rgba(75, 0, 130, 0.3) 0px, transparent 50%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        /* ----------------------------------
+           INTRO/HERO (No Box, Gradient Text)
+           ---------------------------------- */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0 0 15px 0;
+            background: linear-gradient(135deg, #ffffff 0%, var(--header-purple) 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            color: var(--text-main);
+            -webkit-text-fill-color: var(--text-main); /* Ensure unclipped text */
+        }
+
+        /* ----------------------------------
+           BOXED SECTIONS & ANIMATION
+           ---------------------------------- */
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--card-border);
+            
+            /* Box shadow for depth */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+            /* Fade & Slide In state */
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* State when visible in viewport */
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ----------------------------------
+           HEADINGS & LINKS (Colors)
+           ---------------------------------- */
+        h2 {
+            color: var(--header-purple); /* AsrixBD specified color: #9d4edd */
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--link-pink); /* Lighter pink: #ff85a2 */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        p, ul {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 12px 0;
+        }
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="hero">
+            <h1>Hello<br>I'm AsrixBD</h1>
+            <p>A musical artist and a content creator dedicated to gaming and entertainment. My musics are lofi, hip hop and instrumental.</p>
+        </header>
+
+        <div class="card">
+            <h2>About Me</h2>
+            <p><strong>Name</strong> - MD. Naziat Tasin<br>
+            <strong>Birthday</strong> - 10/05/2011<br>
+            <strong>Residence</strong> - Chattogram, Bangladesh<br>
+            <strong>Hobby</strong> - Gaming and Singing<br>
+            <strong>Skill</strong> - AI Mastery</p>
+        </div>
+
+        <div class="card">
+            <h2>Socials</h2>
+            <ul>
+                <li><strong>YouTube</strong> - <a href="https://youtube.com/@asrixbd?si=-cHTNcJjoIm7i4B2">Visit Channel</a></li>
+                <li><strong>Spotify</strong> - <a href="https://open.spotify.com/artist/5jjeAAZxpxWDZm4GrkqLYK?si=YbD0ISo5SDyIVn6vfZM9IQ">Listen Now</a></li>
+                <li><strong>Twitch</strong> - <a href="https://m.twitch.tv/asrix_bd/home">Follow Live</a></li>
+                <li><strong>Instagram</strong> - <a href="https://www.instagram.com/asrixbd?igsh=MXBybW9ka2t6NGg5Yw==">@asrixbd</a></li>
+                <li><strong>Facebook</strong> - <a href="https://www.facebook.com/profile.php?id=61583803886554">Profile</a></li>
+                <li><strong>Discord</strong> - asrixbd</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Join My</h2>
+            <ul>
+                <li><a href="https://discord.gg/NK8DUZMszf">Discord Server</a></li>
+                <li><a href="https://ig.me/j/AbarYtcigRd6lmvY/">Instagram GC</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Contact</h2>
+            <p>1. <strong>Instagram</strong> - <a href="https://www.instagram.com/asrixbd?igsh=MXBybW9ka2t6NGg5Yw==">@asrixbd</a></p>
+            <p>2. <strong>Email</strong> - <a href="mailto:asrixbdcontact@gmail.com">asrixbdcontact@gmail.com</a></p>
+        </div>
+
+    </div>
+
+    <script>
+        // Options for the observer: trigger when 15% is visible
+        const observerOptions = {
+            root: null, // use the viewport
+            rootMargin: '0px',
+            threshold: 0.15 
+        };
+
+        // The callback function that runs when intersection changes
+        const intersectionCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the 'visible' class to trigger CSS transition
+                    entry.target.classList.add('visible');
+                    // Stop observing once the element has appeared
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        // Create the intersection observer
+        const observer = new IntersectionObserver(intersectionCallback, observerOptions);
+
+        // Target all 'card' elements and start observing them
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
