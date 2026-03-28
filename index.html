@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AsrixBD Profile</title>
+    <title>AsrixBD | Official Profile</title>
     <style>
         :root {
             --text-main: #e0e0e0;
@@ -11,12 +11,11 @@
             --link-pink: #ff85a2;
             --card-bg: rgba(22, 22, 26, 0.95);
             --card-border: rgba(157, 78, 221, 0.3);
-            --nav-bg: rgba(10, 10, 12, 0.8);
-            --mc-green: #388e3c;
+            --nav-bg: rgba(10, 10, 12, 0.9);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: var(--text-main);
             margin: 0;
             padding: 0;
@@ -31,33 +30,46 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
         .hero {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px 20px 20px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--header-purple);
+            margin-bottom: 20px;
+            box-shadow: 0 0 25px rgba(157, 78, 221, 0.6);
+            object-fit: cover;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, var(--header-purple) 50%, #ffffff 100%);
+            font-size: 2.8rem;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, var(--header-purple) 50%, #fff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
         }
 
-        /* --- BUTTON NAVIGATION --- */
         .nav-container {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 30px;
+            margin: 0 0 30px 0;
             position: sticky;
-            top: 20px;
-            z-index: 100;
-            padding: 0 10px;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 10px;
+            background: rgba(10, 10, 12, 0.5);
+            backdrop-filter: blur(10px);
+            width: 100%;
         }
 
         .nav-btn {
@@ -68,61 +80,111 @@
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-        }
-
-        .nav-btn:hover {
-            border-color: var(--header-purple);
-            box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+            transition: 0.3s;
+            font-size: 0.85rem;
         }
 
         .nav-btn.active {
             background: var(--header-purple);
             color: white;
-            border-color: var(--header-purple);
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
         }
 
-        /* --- CONTENT CARDS --- */
         .content-area {
             width: 100%;
             max-width: 600px;
-            padding: 20px;
+            padding: 0 20px 50px 20px;
             box-sizing: border-box;
+            position: relative;
         }
 
         .tab-content {
             display: none;
             background: var(--card-bg);
-            padding: 35px;
-            border-radius: 25px;
+            padding: 40px;
+            border-radius: 28px;
             border: 1px solid var(--card-border);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 0.4s ease forwards;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.5s ease-out forwards;
         }
 
-        .tab-content.active {
+        h2 { 
+            color: var(--header-purple); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        .link-card, .sub-btn {
             display: block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 18px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid var(--card-border);
+            text-decoration: none;
+            color: var(--link-pink);
+            font-weight: 600;
+            transition: all 0.4s ease;
+            text-align: center;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        .link-card:hover, .sub-btn:hover {
+            border-color: var(--link-pink);
+            background: rgba(255, 133, 162, 0.1);
+            transform: scale(1.02);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(255, 133, 162, 0.2);
+        }
+
+        .large-label {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 35px 0 15px 0;
+            letter-spacing: 3px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+        }
+
+        .link-grid {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .sub-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        .book-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .book-slider::-webkit-scrollbar { height: 5px; }
+        .book-slider::-webkit-scrollbar-thumb { background: var(--header-purple); border-radius: 10px; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h2 { color: var(--header-purple); margin-bottom: 20px; letter-spacing: 1px; font-size: 1.4rem; }
-        a { color: var(--link-pink); text-decoration: none; font-weight: 600; transition: 0.3s; }
-        a:hover { color: #fff; text-decoration: underline; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 15px 0; font-size: 1.05rem; }
-        strong { color: #fff; }
-        .coming-soon { color: #888; font-style: italic; }
     </style>
 </head>
 <body>
 
     <header class="hero">
+        <img src="https://i.ibb.co/4whjkD66/pfp.jpg" alt="AsrixBD" class="profile-img">
         <h1>AsrixBD</h1>
         <p>Musical Artist & Content Creator</p>
     </header>
@@ -131,80 +193,95 @@
         <button class="nav-btn active" onclick="openTab(event, 'about')">About</button>
         <button class="nav-btn" onclick="openTab(event, 'music')">Music</button>
         <button class="nav-btn" onclick="openTab(event, 'socials')">Socials</button>
+        <button class="nav-btn" onclick="openTab(event, 'literature')">Literature</button>
         <button class="nav-btn" onclick="openTab(event, 'minecraft')">Minecraft</button>
         <button class="nav-btn" onclick="openTab(event, 'join')">Community</button>
         <button class="nav-btn" onclick="openTab(event, 'contact')">Contact</button>
     </nav>
 
     <main class="content-area">
-        <div id="about" class="tab-content active">
+        <div id="about" class="tab-content" style="display: block;">
             <h2>About Me</h2>
-            <p><strong>Name</strong> - MD. Naziat Tasin<br>
-            <strong>Birthday</strong> - 10/05/2011<br>
-            <strong>Residence</strong> - Chattogram, Bangladesh<br>
-            <strong>Hobby</strong> - Gaming and Singing<br>
-            <strong>Skill</strong> - AI Mastery</p>
+            <div style="text-align: center; line-height: 1.8;">
+                <p><strong>Name:</strong> MD. Naziat Tasin</p>
+                <p><strong>Birthday:</strong> 10/05/2011</p>
+                <p><strong>Residence:</strong> Chattogram, Bangladesh</p>
+                <p><strong>Hobby:</strong> Gaming and Singing</p>
+                <p><strong>Skill:</strong> AI Mastery</p>
+            </div>
         </div>
 
         <div id="music" class="tab-content">
             <h2>My Music</h2>
-            <ul>
-                <li><strong>Spotify</strong> - <a href="https://open.spotify.com/artist/5jjeAAZxpxWDZm4GrkqLYK?si=YbD0ISo5SDyIVn6vfZM9IQ" target="_blank">Listen Now</a></li>
-                <li><strong>Deezer</strong> - <a href="https://www.deezer.com/en/artist/367287152" target="_blank">Stream on Deezer</a></li>
-                <li><strong>Amazon Music</strong> - <a href="https://music.amazon.com/artists/B0GGJ2CYJQ/asrixbd" target="_blank">Listen on Amazon</a></li>
-                <li><strong>YouTube Music</strong> - <a href="https://youtube.com/@asrixbd?si=-cHTNcJjoIm7i4B2" target="_blank">Music Channel</a></li>
-            </ul>
+            <a href="https://youtube.com/@asrixbd?si=-cHTNcJjoIm7i4B2" target="_blank" class="link-card">YouTube Music</a>
+            <a href="https://music.amazon.com/artists/B0GGJ2CYJQ/asrixbd" target="_blank" class="link-card">Amazon Music</a>
+            <a href="https://www.deezer.com/en/artist/367287152" target="_blank" class="link-card">Deezer</a>
+            <a href="https://open.spotify.com/artist/5jjeAAZxpxWDZm4GrkqLYK?si=YbD0ISo5SDyIVn6vfZM9IQ" target="_blank" class="link-card">Spotify</a>
         </div>
 
         <div id="socials" class="tab-content">
             <h2>Social Media</h2>
-            <ul>
-                <li><strong>Instagram</strong> - <a href="https://www.instagram.com/asrixbd" target="_blank">@asrixbd</a></li>
-                <li><strong>Facebook</strong> - <a href="https://www.facebook.com/profile.php?id=61583803886554" target="_blank">Facebook Profile</a></li>
-                <li><strong>Twitch</strong> - <a href="https://m.twitch.tv/asrix_bd/home" target="_blank">Follow Live</a></li>
-                <li><strong>YouTube</strong> - <a href="https://youtube.com/@asrixbd?si=-cHTNcJjoIm7i4B2" target="_blank">Main Channel</a></li>
-            </ul>
+            <a href="https://www.instagram.com/asrixbd" target="_blank" class="link-card">Instagram (@asrixbd)</a>
+            <a href="https://www.facebook.com/profile.php?id=61583803886554" target="_blank" class="link-card">Facebook Profile</a>
+            <a href="https://m.twitch.tv/asrix_bd/home" target="_blank" class="link-card">Twitch Live</a>
+            <a href="https://youtube.com/@asrixbd?si=-cHTNcJjoIm7i4B2" target="_blank" class="link-card">YouTube Main Channel</a>
+        </div>
+
+        <div id="literature" class="tab-content">
+            <h2>Literature</h2>
+            <div class="large-label">POEMS</div>
+            <div class="link-grid">
+                <a href="https://github.com/asrixbd/bangla-poems" target="_blank" class="sub-btn">Bangla</a>
+                <a href="https://github.com/asrixbd/english-poems" target="_blank" class="sub-btn">English</a>
+            </div>
+            <div class="large-label">STORIES</div>
+            <div class="link-grid">
+                <a href="https://github.com/asrixbd/bangla-stories" target="_blank" class="sub-btn">Bangla</a>
+                <a href="https://github.com/asrixbd/english-stories" target="_blank" class="sub-btn">English</a>
+            </div>
+            <div class="large-label">BOOKS</div>
+            <a href="https://github.com/asrixbd/all-books" target="_blank" class="link-card">All Books</a>
+            <div class="book-slider">
+                <div style="flex: 0 0 160px; text-align: center;">
+                    <a href="https://github.com/asrixbd/all-books/releases/download/Books/Rong.pdf" target="_blank" style="text-decoration: none;">
+                        <img src="https://i.ibb.co/1Yb3Swkr/rong-cover.jpg" alt="Rong - MD. Naziat Tasin" style="width: 160px; height: 240px; border-radius: 12px; border: 2px solid var(--card-border); object-fit: cover; transition: 0.3s;">
+                        <span style="display: block; margin-top: 10px; font-weight: bold; color: var(--text-main);">Rong (রঙ)</span>
+                        <span style="display: block; font-size: 0.8rem; color: var(--header-purple);">MD. Naziat Tasin</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div id="minecraft" class="tab-content">
             <h2>Minecraft</h2>
-            <ul>
-                <li><strong>AsrixBD Modpack</strong> - <a href="https://github.com/asrixbd/AsrixBD-Modpack" target="_blank">Get it on GitHub</a></li>
-                <li><strong>AsrixBD Texture Pack</strong> - <span class="coming-soon">Coming Soon</span></li>
-            </ul>
+            <a href="https://github.com/asrixbd/AsrixBD-Modpack" target="_blank" class="link-card">AsrixBD Modpack</a>
         </div>
 
         <div id="join" class="tab-content">
             <h2>Community</h2>
-            <ul>
-                <li><strong>Discord Server</strong> - <a href="https://discord.gg/NK8DUZMszf" target="_blank">Join Here</a></li>
-                <li><strong>Instagram GC</strong> - <a href="https://ig.me/j/AbarYtcigRd6lmvY/" target="_blank">Join Group</a></li>
-            </ul>
+            <a href="https://discord.gg/NK8DUZMszf" target="_blank" class="link-card">Discord Server</a>
+            <a href="https://ig.me/j/AbarYtcigRd6lmvY/" target="_blank" class="link-card">Instagram GC</a>
         </div>
 
         <div id="contact" class="tab-content">
             <h2>Contact</h2>
-            <p><strong>Instagram DM</strong> - <a href="https://www.instagram.com/asrixbd" target="_blank">@asrixbd</a></p>
-            <p><strong>Email</strong> - <a href="mailto:asrixbdcontact@gmail.com">asrixbdcontact@gmail.com</a></p>
+            <a href="mailto:asrixbdcontact@gmail.com" class="link-card">asrixbdcontact@gmail.com</a>
         </div>
     </main>
 
     <script>
         function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
+            const contents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
             }
-
-            const navBtns = document.getElementsByClassName("nav-btn");
-            for (let i = 0; i < navBtns.length; i++) {
-                navBtns[i].classList.remove("active");
+            const btns = document.getElementsByClassName("nav-btn");
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
             }
-
-            document.getElementById(tabName).classList.add("active");
+            document.getElementById(tabName).style.display = "block";
             evt.currentTarget.classList.add("active");
         }
     </script>
-
 </body>
 </html>
